@@ -10,18 +10,23 @@ function setCart(c) {
 }
 
 function addToCart(item) {
-  var newObj ={}
-  var itemName = item
-  var itemPrice = Math.floor(Math.random() * 101)
-  newObj[itemName] = itemPrice
-  cart.push(newObj)
-  console.log(`${item} has been added to your cart.`)
-  return cart
+  var itemPrice = Math.floor(Math.random() * 100 + 1)
+  var itemName = {[item] : itemPrice}
+  cart.push(itemName);
+    console.log(`${item} has been added to your cart.`)
+    return cart
 }
 
 
+
 function viewCart() {
-  // write your code here
+    if(cart.length === 0 ) {
+      console.log('Your shopping cart is empty.')   
+    }
+    else if(cart.length === 1) {
+      console.log(`In your cart, you have ${itemName}  at $${itemPrice}.`)    
+    }
+    
 }
 
 function total() {
